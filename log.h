@@ -33,9 +33,9 @@ class Log
 
     virtual Log &operator<<(typelog level) = 0;
 
-    friend Log &operator<<(std::shared_ptr<Log> logger, std::string /*str*/);
+    friend Log &operator<<(std::shared_ptr<Log> logger, std::string str);
 
-    friend Log &operator<<(std::shared_ptr<Log> logger, int /*value*/);
+    friend Log &operator<<(std::shared_ptr<Log> logger, int value);
 
     friend Log &operator<<(std::shared_ptr<Log> logger, typelog /*type*/);
 };
