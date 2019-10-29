@@ -9,6 +9,10 @@ int main()
 
     logger->open_logfile("D:\\lll2.txt");
 
+    logger << " Data from settings file '"
+           << "D:\\lll2.txt"
+           << "' :" << INFO;
+
     logger << " ergwbtg " << 22 << INFO;
 
     logger << 22 << " faewr " << INFO;

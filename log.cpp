@@ -1,15 +1,15 @@
 #include "log.h"
 
-Log &operator<<(std::shared_ptr<Log> logger, std::string /*str*/)
+Log &operator<<(std::shared_ptr<Log> logger, std::string str)
 {
     std::cout << " string " << std::endl;
-    return *logger;
+    return *logger << str;
 }
 
-Log &operator<<(std::shared_ptr<Log> logger, int /*value*/)
+Log &operator<<(std::shared_ptr<Log> logger, int value)
 {
     std::cout << " int " << std::endl;
-    return *logger;
+    return *logger << value;
 }
 
 Log &operator<<(std::shared_ptr<Log> logger, typelog /*type*/)
