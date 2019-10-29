@@ -20,6 +20,6 @@ class Decorator : public Log
     void close_log() override;
 
   private:
-    std::shared_ptr<Log> m_component;
+    Log *m_component;
     const std::string &system_name;
 };
