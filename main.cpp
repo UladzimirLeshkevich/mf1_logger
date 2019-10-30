@@ -1,4 +1,6 @@
 #include "log_manager.h"
+#include <iostream>
+#include <memory>
 
 class A
 {
