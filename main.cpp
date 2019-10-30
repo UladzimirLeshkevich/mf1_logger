@@ -44,7 +44,7 @@ int main()
 
     logger << 22 << " from main DLL " << INFO;
 
-    logger << " from main " << 323 << CRITICAL;
+    logger << " from main DLL " << 323 << CRITICAL;
 
     logger->close_log();
 
