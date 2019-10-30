@@ -5,7 +5,7 @@
 class Decorator : public Log
 {
   public:
-    Decorator(Log *component, const std::string &sname);
+    Decorator(Log *component, const std::string sname);
 
     void open_logfile(const std::string &filepath) override;
 
@@ -21,5 +21,5 @@ class Decorator : public Log
 
   private:
     Log *m_component;
-    const std::string &system_name;
+    const std::string system_name;
 };

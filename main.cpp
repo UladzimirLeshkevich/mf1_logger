@@ -3,42 +3,63 @@
 class A
 {
   public:
-    A() : logger(LogManager::get_logger("A_system")) { logger << " A system log " << 77 << CRITICAL; }
+    A() : logger(LogManager::get_logger("sA"))
+    {
+        //logger->open_logfile("D:\\log_s.txt");
+        logger << " A system log " << 77 << CRITICAL;
+    }
     std::shared_ptr<Log> logger;
+
+    void print()
+    {
+        log();
+    }
 
     void log()
     {
         logger << " A log() " << DEBUG;
+    }
+
+    ~A()
+    {
+        std::cout << " ~A() " << std::endl;
+        //logger->close_log();
     }
 };
 
 class B
 {
   public:
-    B() : logger(LogManager::get_logger("B_system")) { logger << " B system log " << 88 << CRITICAL; }
+    B() : logger(LogManager::get_logger("B_system"))
+    {
+        logger << " B system log " << 88 << CRITICAL;
+    }
     std::shared_ptr<Log> logger;
+
+    ~B()
+    {
+        std::cout << " ~B() " << std::endl;
+        //logger->close_log();
+    }
 };
 
 //============================================================
 int main()
 {
     std::shared_ptr<Log> logger;
-
     logger = LogManager::get_logger("main_system");
-
     logger->open_logfile("D:\\log_s.txt");
 
     A a;
-
     B b;
 
-    //a.logger << " A system log " << 77 << CRITICAL;// NOT OK !!
+    a.logger << 1 << " A from main " << WARNING;
+    a.print();
 
-    //a.log(); // NOT OK !!
+    b.logger << 2 << " B from main " << WARNING;
+    b.logger << " B from main " << 2 << DEBUG;
 
-    logger << " main system log " << 66 << INFO;
-
-    logger << 66 << " main system log " << WARNING;
+    logger << " from main " << 2 << WARNING;
 
     logger->close_log();
 

@@ -1,7 +1,7 @@
 #include "log_manager.h"
 
 //==================================================================
-std::shared_ptr<Log> LogManager::get_logger(const std::string &system_name)
+std::shared_ptr<Log> LogManager::get_logger(std::string system_name)
 {
     auto it = loggerMap.find(system_name);
     if (it != loggerMap.end())

@@ -8,7 +8,7 @@ class LogManager
   public:
     LogManager() = delete;
 
-    static std::shared_ptr<Log> get_logger(const std::string &system_name);
+    static std::shared_ptr<Log> get_logger(std::string system_name);
 
   private:
     static std::shared_ptr<Log> logger;

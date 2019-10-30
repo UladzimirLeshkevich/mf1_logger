@@ -1,7 +1,7 @@
 #include "decorator.h"
 
 //==================================================================
-Decorator::Decorator(Log *component, const std::string &sname)
+Decorator::Decorator(Log *component, std::string sname)
     : m_component(component), system_name(sname)
 {
 }
